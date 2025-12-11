@@ -185,7 +185,7 @@ Trainer(
     device: str = "cpu", 
     patience: int = 5
 )
-
+```
 #### Key Methods
 
 | Method | Signature | Description |
@@ -213,6 +213,7 @@ I am always open to discussing new projects, creative ideas, or opportunities to
 </div>
 
 ---
+
 
 
 
