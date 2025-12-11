@@ -86,12 +86,99 @@ We are continuously working to improve the model's clinical applicability and ro
 * **Multimodal Fusion:**
     * Incorporating patient clinical metadata (age, genetic markers) alongside image data to improve diagnostic precision.
 
+# 🏋️ Training Pipeline Documentation
+### Modular PyTorch Trainer with Early Stopping & Auto-Checkpointing
+
+[![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![Code Style](https://img.shields.io/badge/Code%20Style-Class%20Based-blue?style=for-the-badge)]()
+
+> **"Set it and forget it."**
+> A robust `Trainer` class designed to abstract away the training loop boilerplate, ensuring reproducibility and preventing overfitting.
+
+---
+
+## 📖 Overview
+
+The `Trainer` class encapsulates the entire training lifecycle. It manages:
+1.  **Device Placement:** Automatically moves data and models to GPU (`cuda`) if available.
+2.  **Progress Tracking:** Uses `tqdm` for real-time batch processing updates.
+3.  **Metric Logging:** Tracks Loss and Accuracy for both Training and Testing phases.
+4.  **Model Preservation:** Automatically saves the best model based on validation accuracy.
+5.  **Early Stopping:** halts training if the model stops improving, saving computational resources.
+
+---
+
+## <a name="installation"></a>🚀 Getting Started
+
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+* **Python 3.8+**
+* **CUDA 11.0+** (Highly recommended for Transformer training)
+* **Libraries:** `torch`, `torchvision`, `timm` (PyTorch Image Models), `tqdm`, `scikit-learn`
+
+### Installation
+
+1.  **Clone the repository**
+    ```bash
+    git clone [https://github.com/VishnuVardhan/Brain-Tumor-ViT.git](https://github.com/VishnuVardhan/Brain-Tumor-ViT.git)
+    cd Brain-Tumor-ViT
+    ```
+
+2.  **Install dependencies**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3.  **Dataset Setup**
+    * Download the Brain Tumor Classification dataset (e.g., from [Kaggle](https://www.kaggle.com/)).
+    * Organize it into standard folder structures:
+        ```text
+        data/
+          train/
+            glioma/
+            meningioma/
+            ...
+          val/
+        ```
+
+### Usage Example
+
+Running inference on a single MRI scan:
+
+```python
+import torch
+from models import ViT_Brain_Classifier
+from utils import process_image
+
+# Load Model
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model = ViT_Brain_Classifier(num_classes=4).to(device)
+model.load_state_dict(torch.load('weights/best_vit_model.pth'))
+
+# Preprocess Image
+image_path = "./samples/mri_scan_01.jpg"
+input_tensor = process_image(image_path).to(device)
+
+# Predict
+with torch.no_grad():
+    output = model(input_tensor)
+    prediction = torch.argmax(output, dim=1).item()
+    
+class_map = {0: 'No Tumor', 1: 'Glioma', 2: 'Meningioma', 3: 'Pituitary'}
+print(f"Diagnosis: {class_map[prediction]}")
+
+
+
+
 ## 📜 License
 This project is licensed under the **MIT License**.
 
 ---
 
 ### 📢 Connect with Me
+
 
 
 
