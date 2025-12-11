@@ -71,10 +71,20 @@ The Vision Transformer showed particular strength in distinguishing between tumo
 
 > **Key Observation:** The ViT model reduced false negatives in early-stage Glioma detection by **12%** compared to ResNet-50, largely due to its ability to capture global context across the entire MRI slice.
 
-## 🎯 Future Enhancements
-- Deploy the model as a **web application**.
-- Fine-tune Vision Transformers for **real-time predictions**.
-- Expand the dataset for better generalization.
+## 🔮 Future Enhancements
+
+We are continuously working to improve the model's clinical applicability and robustness. The upcoming roadmap includes:
+
+* **Explainable AI (XAI) Integration:**
+    * Implementing **Attention Rollout** and **Grad-CAM** to visualize exactly which regions of the MRI the Transformer is focusing on. This is critical for building trust with medical professionals.
+* **3D Volumetric Analysis:**
+    * Moving beyond 2D slice classification to analyze full 3D MRI volumes (NIfTI format) for more accurate tumor localization.
+* **Federated Learning:**
+    * Developing a privacy-preserving framework to train the model across multiple hospital datasets without sharing sensitive patient data.
+* **Edge Deployment:**
+    * Quantizing the model (using ONNX or TensorRT) to run efficiently on edge devices or tablets for potential use in remote diagnostic centers.
+* **Multimodal Fusion:**
+    * Incorporating patient clinical metadata (age, genetic markers) alongside image data to improve diagnostic precision.
 
 ## 📜 License
 This project is licensed under the **MIT License**.
@@ -82,5 +92,6 @@ This project is licensed under the **MIT License**.
 ---
 
 ### 📢 Connect with Me
+
 
 
