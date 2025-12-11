@@ -71,7 +71,7 @@ The Vision Transformer showed particular strength in distinguishing between tumo
 
 > **Key Observation:** The ViT model reduced false negatives in early-stage Glioma detection by **12%** compared to ResNet-50, largely due to its ability to capture global context across the entire MRI slice.
 
-## 🔮 Future Enhancements
+##  Future Enhancements
 
 We are continuously working to improve the model's clinical applicability and robustness. The upcoming roadmap includes:
 
@@ -86,7 +86,7 @@ We are continuously working to improve the model's clinical applicability and ro
 * **Multimodal Fusion:**
     * Incorporating patient clinical metadata (age, genetic markers) alongside image data to improve diagnostic precision.
 
-# 🏋️ Training Pipeline Documentation
+# Training Pipeline Documentation
 ### Modular PyTorch Trainer with Early Stopping & Auto-Checkpointing
 
 [![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
@@ -213,6 +213,7 @@ I am always open to discussing new projects, creative ideas, or opportunities to
 </div>
 
 ---
+
 
 
 
