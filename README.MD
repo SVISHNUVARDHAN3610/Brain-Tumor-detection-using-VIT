@@ -21,13 +21,29 @@ This project highlights the potential of Vision Transformers in medical imaging,
 
 ## 🛠 Technologies Used
 - **Python**
-- **TensorFlow/Keras**
+- **Pytorch**
 - **Vision Transformers (ViTs)**
 - **OpenCV**
 - **NumPy, Pandas, Matplotlib**
 
+## <a name="architecture"></a>🏗️ System Architecture
+
+The pipeline moves from raw MRI inputs to patch embedding, followed by the Transformer Encoder stack.
+
+```mermaid
+graph LR
+    A[Input MRI Image] --> B[Patch Partitioning]
+    B --> C[Linear Projection of Patches]
+    C --> D[Position Embeddings]
+    D --> E{Transformer Encoder}
+    E -->|Self-Attention| E
+    E --> F[MLP Head]
+    F --> G((Classification))
+    
+    style G fill:#f9f,stroke:#333,stroke-width:2px
+
 ## 📊 Dataset
-- Utilized publicly available **brain tumor datasets** (e.g., BraTS).
+- Brats Dataset (MICCAI BraTS) – GOLD STANDARD
 - Preprocessed images to enhance model training and performance.
 
 ## 🔍 Results & Insights
@@ -48,3 +64,4 @@ This project is licensed under the **MIT License**.
 ---
 
 ### 📢 Connect with Me
+
