@@ -132,7 +132,7 @@ To get a local copy up and running, follow these simple steps.
     ```
 
 3.  **Dataset Setup**
-    * Download the Brain Tumor Classification dataset (e.g., from [Kaggle](https://www.kaggle.com/)).
+    * Download the Brats Dataset (MICCAI BraTS) – GOLD STANDARD
     * Organize it into standard folder structures:
         ```text
         data/
@@ -182,7 +182,7 @@ Trainer(
     optimizer: optim.Optimizer, 
     loss_fn: nn.Module, 
     model_name: str = "model", 
-    device: str = "cpu", 
+    device: str = "cuda", 
     patience: int = 5
 )
 ```
@@ -213,6 +213,7 @@ I am always open to discussing new projects, creative ideas, or opportunities to
 </div>
 
 ---
+
 
 
 
