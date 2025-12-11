@@ -171,14 +171,48 @@ print(f"Diagnosis: {class_map[prediction]}")
 
 
 
+```
 
+### `class Trainer`
+
+#### Constructor
+```python
+Trainer(
+    model: nn.Module, 
+    optimizer: optim.Optimizer, 
+    loss_fn: nn.Module, 
+    model_name: str = "model", 
+    device: str = "cpu", 
+    patience: int = 5
+)
+
+#### Key Methods
+
+| Method | Signature | Description |
+| :--- | :--- | :--- |
+| **`train`** | `(train_loader, test_loader, epochs)` | **The Main Loop.** Orchestrates the process. Iterates through `epochs`, calls `train_epoch` and `evaluate`, and enforces early stopping. |
+| **`train_epoch`** | `(train_loader)` | **Single Pass.** Iterates through one complete pass of the data. Calculates gradients, updates weights, and displays a `tqdm` progress bar. |
+| **`evaluate`** | `(test_loader)` | **Inference.** Runs the model in `eval()` mode with gradients disabled. Returns accuracy and average loss. |
+| **`save_model`** | `()` | **Checkpointing.** Serializes the model state to disk (`.pt`) only when a new best accuracy is achieved. |
 ## 📜 License
 This project is licensed under the **MIT License**.
 
 ---
 
-### 📢 Connect with Me
 
+## 📫 Connect with Me
+
+I am always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+
+<div align="center">
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/senapathi-vishnu/)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SVISHNUVARDHAN3610)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:svishnuvardhan3610@gmail.com)
+
+</div>
+
+---
 
 
 
